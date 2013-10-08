@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="ToukStyle" parent="@style/Theme.AppCompat.Light">
+        <item name="android:windowBackground">@drawable/piorka_back</item>
+    </style>
+</resources>

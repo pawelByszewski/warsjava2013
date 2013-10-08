@@ -1,0 +1,76 @@
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+       xmlns:tools="http://schemas.android.com/tools"
+       tools:context=".LoginActivity">
+
+    <LinearLayout android:layout_width="fill_parent"
+                  android:layout_height="fill_parent"
+                  android:gravity="center_vertical"
+                  android:layout_alignParentTop="true">
+    <ImageView
+            android:id="@+id/login_form"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleType="centerCrop"
+            android:src="@drawable/piorko"
+            />
+    </LinearLayout>
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <LinearLayout android:layout_width="fill_parent"
+                      android:layout_height="fill_parent"
+                      android:orientation="vertical"
+
+                      android:gravity="center">
+            <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Warsjava"
+                    android:gravity="center" android:layout_marginBottom="20dp" android:clickable="false"
+                    android:textStyle="bold" android:typeface="monospace"
+                    android:textSize="33dp"/>
+            <Button
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:text="Simple fragment"
+                    android:onClick="openSimpleFragment"
+                    android:layout_gravity="center"
+                    android:background="@drawable/blue_button"
+                    style="@style/ButtonText"/>
+
+            <Button
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:text="Wifi data"
+                    android:onClick="openWifiData"
+                    android:layout_gravity="center"
+                    android:background="@drawable/blue_button"
+                    style="@style/ButtonText"/>
+            <Button
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:text="Householder"
+                    android:onClick="openHouseholder"
+                    android:layout_gravity="center"
+                    android:background="@drawable/blue_button"
+                    style="@style/ButtonText"/>
+            <Button
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:text="Map"
+                    android:onClick="openMap"
+                    android:layout_gravity="center"
+                    android:background="@drawable/blue_button"
+                    style="@style/ButtonText"/>
+
+            <Button
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:text="Cars"
+                    android:onClick="openCars"
+                    android:layout_gravity="center"
+                    android:background="@drawable/blue_button"
+                    style="@style/ButtonText"/>
+        </LinearLayout>
+    </RelativeLayout>
+</merge>
