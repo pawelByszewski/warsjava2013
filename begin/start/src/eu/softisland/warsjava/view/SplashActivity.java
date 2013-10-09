@@ -70,4 +70,7 @@ public class SplashActivity extends Activity implements QuoteReceiver {
         EasyTracker.getInstance(this).activityStop(this);
     }
 
+    protected void setQuoteProvider(QuoteProvider quoteProvider) {
+        this.quoteProvider = quoteProvider;
+    }
 }
