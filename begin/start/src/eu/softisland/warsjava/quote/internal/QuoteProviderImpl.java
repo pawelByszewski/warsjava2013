@@ -1,15 +1,18 @@
 package eu.softisland.warsjava.quote.internal;
 
+import com.google.inject.Inject;
 import eu.softisland.warsjava.quote.QuoteProvider;
 
 public class QuoteProviderImpl extends QuoteProviderBase implements QuoteProvider, QuoteEduroProviderTask.QuoteTaskListener {
 
+
+    @Inject
     private QuoteEduroProviderTask quoteEduroProviderTask;
 
     @Override
     public void obtainQuote() {
         super.obtainQuote();
-        quoteEduroProviderTask = new QuoteEduroProviderTask(this);
+        quoteEduroProviderTask.setQuoteTaskListener(this);
         quoteEduroProviderTask.execute();
     }
 

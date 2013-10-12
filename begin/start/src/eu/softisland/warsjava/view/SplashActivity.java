@@ -1,6 +1,5 @@
 package eu.softisland.warsjava.view;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -8,27 +7,33 @@ import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import com.google.analytics.tracking.android.EasyTracker;
+import com.google.inject.Inject;
+import com.google.inject.name.Named;
 import eu.softisland.warsjava.R;
 import eu.softisland.warsjava.quote.QuoteProvider;
 import eu.softisland.warsjava.quote.QuoteReceiver;
-import eu.softisland.warsjava.quote.internal.QuoteProviderMock;
+import roboguice.activity.RoboActivity;
+import roboguice.inject.ContentView;
+import roboguice.inject.InjectView;
 
-public class SplashActivity extends Activity implements QuoteReceiver {
+@ContentView(R.layout.splash)
+public class SplashActivity extends RoboActivity implements QuoteReceiver {
 
-    private static int SPLASH_SCREEN_DURATION = 1 * 1000;
+    @Inject @Named("qwe")
+    private int SPLASH_SCREEN_DURATION;
 
+    @InjectView(R.id.splash_quotation)
     private TextView quotationTextView;
     private ProgressBar progressBar;
 
-    private QuoteProvider quoteProvider = new QuoteProviderMock();
+    @Inject
+    private QuoteProvider quoteProvider;
 //    private QuoteProvider quoteProvider = new QuoteProviderImpl();
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.splash);
 
-        quotationTextView = (TextView) findViewById(R.id.splash_quotation);
         progressBar = (ProgressBar) findViewById(R.id.splash_progressBar);
 
         quoteProvider.setQuatationReceiver(this);

@@ -3,6 +3,7 @@ package eu.softisland.warsjava.quote.internal;
 import android.os.Handler;
 import eu.softisland.warsjava.quote.QuoteProvider;
 
+
 public class QuoteProviderMock extends QuoteProviderBase implements QuoteProvider {
 
     private static int FAKE_DELAY = 5 * 1000;
